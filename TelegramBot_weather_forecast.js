@@ -35,7 +35,7 @@ const requestLoop = setInterval(async () => {
     } catch (error) {
         console.log("got an error: " + error);
     }
-}, 20000);
+}, 60000);
 
 // clearInterval(requestLoop);
 
