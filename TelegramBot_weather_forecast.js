@@ -20,7 +20,7 @@ const app = express();
 const server = http.createServer(app);
 app.get("/", (req, res) => {
     res.send("<h1>Hello Bot!</h1>");
-    console.log("recieved GET request from client")
+    console.log(`recieved GET request from client with ip: ${req.ip}`)
 });
 
 server.listen(80, "0.0.0.0", () => { console.log("server is listening on *:80") })
