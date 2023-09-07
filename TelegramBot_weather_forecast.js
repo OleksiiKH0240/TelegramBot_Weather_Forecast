@@ -23,13 +23,13 @@ app.get("/", (req, res) => {
     console.log("recieved GET request from client")
 });
 
-server.listen(80, "localhost", () => { console.log("server is listening on *:80") })
+server.listen(80, "0.0.0.0", () => { console.log("server is listening on *:80") })
 
 
 const requestLoop = setInterval(async () => {
     console.log("\nsending GET request to server...");
     try {
-        const url = process.env.botUrl || "http://localhost:80";
+        const url = process.env.botUrl || "http://0.0.0.0:80";
         const response = await axios.get(url);
         console.log(`server response status: ${response.status}\n`);
     } catch (error) {
