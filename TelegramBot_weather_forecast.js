@@ -29,7 +29,7 @@ server.listen(80, "localhost", () => { console.log("server is listening on *:80"
 const requestLoop = setInterval(async () => {
     console.log("\nsending GET request to server...");
     try {
-        const url = "http://localhost:80" || process.env.botUrl;
+        const url = process.env.botUrl || "http://localhost:80";
         const response = await axios.get(url);
         console.log(`server response status: ${response.status}\n`);
     } catch (error) {
